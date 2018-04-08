@@ -1,0 +1,39 @@
+//BUTTONS----------------------------------------
+
+package com.example.android.justjava
+
+import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
+import android.view.View
+import kotlinx.android.synthetic.main.activity_main.* // allow to access field in XML directly
+
+class MainActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)      // Connect XML file with Activity file
+
+        cancelButton.setOnClickListener {           // Set listener on button, so every time button will be click, task inside will perform
+            inputText.setText("my button")
+        }
+    }
+                                                    // Other way to set listener on the button
+    fun buttonMethod(view: View){                   // If we set up in XML onClick then this method will execute when button is clicked
+         val name = inputText.text                  // every button, textView.... is a View
+         textView2.text = name
+    }
+}
+
+// IN XML---------------------------------------------------
+
+
+
+
+            <Button
+            android:id="@+id/button7"               // Id of the field.  @ means reference to resources
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Button"
+            tools:layout_editor_absoluteX="45dp"
+            tools:layout_editor_absoluteY="231dp"
+            android:onClick="buttonMethod"/>        // onClick property to activate function buttonMethod 
