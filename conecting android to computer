@@ -1,0 +1,15 @@
+Connecting Android device to the computer 
+
+
+To let Android Studio communicate with your device, you must turn on USB Debugging on your Android device.
+
+On Android 4.2 and higher, the Developer options screen is hidden by default. To show Developer options and enable USB Debugging:
+
+On your device, open Settings > About phone and tap Build number seven times.
+Return to the previous screen (Settings). Developer options appears at the bottom of the list. Tap Developer options.
+Enable USB Debugging.
+Now you can connect your device and run the app from Android Studio.
+
+Connect your device to your development machine with a USB cable. On the device, you might need to agree to allow USB debugging from your development device.
+Click Run in the toolbar at the top of the window. (You might need to select View > Toolbar to see this option.) The Select Deployment Target dialog opens with the list of available emulators and connected devices.
+Select your device, and click OK.
