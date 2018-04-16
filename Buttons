@@ -11,29 +11,43 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)      // Connect XML file with Activity file
-
-        cancelButton.setOnClickListener {           // Set listener on button, so every time button will be click, task inside will perform
-            inputText.setText("my button")
+        
+        //Connect XML file with Activity file
+        setContentView(R.layout.activity_main)      
+        
+        //First way of setting Listener on Button
+        //Every time button will be click, task inside will perform
+        cancelButton.setOnClickListener {  
+            //EditText is type of Editable
+            myEditView.setText("my button")
+            val fromEditView = myEditView.text.toString()
         }
     }
-                                                    // Other way to set listener on the button
-    fun buttonMethod(view: View){                   // If we set up in XML onClick then this method will execute when button is clicked
-         val name = inputText.text                  // every button, textView.... is a View
-         textView2.text = name
+    
+ //--------------------------------------------------------------------------------------------------
+         
+    //Other way to set Listener on the Button. Not recomended
+    //We need to add code onClick in XML 
+    fun buttonMethod(view: View){                               
+         myTextView2.text = "something"
+         val fromTextView = myTextView2.text.toString() 
     }
 }
 
-// IN XML---------------------------------------------------
+//IN XML---------------------------------------------------
 
 
 
 
             <Button
-            android:id="@+id/button7"               // Id of the field.  @ means reference to resources
+            
+            // Id of the view.  "@" means reference to resources
+            android:id="@+id/button7"               
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Button"
             tools:layout_editor_absoluteX="45dp"
             tools:layout_editor_absoluteY="231dp"
-            android:onClick="buttonMethod"/>        // onClick property to activate function buttonMethod 
+            
+            // onClick property to activate function buttonMethod 
+            android:onClick="buttonMethod"/>        
