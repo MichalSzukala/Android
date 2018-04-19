@@ -1,0 +1,19 @@
+//ADDING IMAGE----------------------------------------
+
+/In build gradle add
+implementation 'com.squareup.picasso:picasso:2.71828'
+
+//In manifest add Internet permission
+<uses-permission android:name="android.permission.INTERNET" />
+
+//In drawable files need to start with a small letter
+
+
+//To add picture to ImageView from Internet with Picasso
+Picasso.get().load(“url”).into(myImageHolder)
+
+//To add picture from drawables
+imageViewPicasso.setImageResource(R.drawable.duck)
+
+//Set ImageView to empty
+imageViewPicasso.setImageResource(0)
