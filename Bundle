@@ -1,0 +1,21 @@
+//Create new Intent
+val intend: Intent = Intent(this, NewActivity::class.java)	//In Java would be NewActivity.class
+
+//Creating Bundle and transfer String to it
+intend.putExtra("activityOneText", “haha”)
+
+//start new Activity with Intent containing Bundle inside
+startActivity(intend)
+
+
+—————————————————————
+//Receiving Bundle in new Activity
+
+//Getting intent
+val myIntent: Intent = intent 	//getIntend() in Java
+
+//Getting Bundle from Intent
+val myBundle: Bundle = myIntent.extras   	//getExtras() in Java
+
+//Getting String from Bundle
+val receivedText: String = myBundle.getString("activityOneText") 
