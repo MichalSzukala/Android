@@ -1,0 +1,11 @@
+//Toast
+Toast toast = Toast.makeText(this, "Hello", Toast.LENGTH_SHORT);
+toast.show();
+
+//Or
+
+Toast.makeText(this, "Hello", Toast.LENGTH_SHORT).show();
+
+
+//Log entry
+Log.v("TAG", "Message");
