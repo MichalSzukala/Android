@@ -1,0 +1,21 @@
+//Explicit intent
+Intent intend = new Intent(this, Second_Activity.class);
+
+//Adding URI to intent
+intent.setData(Uri.parse(http://www.fat.com));
+startService(intent);
+
+
+
+// Implicit intent. Create the text message with a string
+Intent sendIntent = new Intent();
+sendIntent.setAction(Intent.ACTION_SEND);
+sendIntent.putExtra(Intent.EXTRA_TEXT, "textMessage");
+sendIntent.setType("text/plain");
+
+
+
+// Verify that the intent will resolve to an activity
+if (sendIntent.resolveActivity(getPackageManager()) != null) {
+    startActivity(sendIntent);
+}
