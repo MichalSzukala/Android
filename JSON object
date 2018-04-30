@@ -1,0 +1,19 @@
+//When we have JSON object in String candyJSON like that:
+String candy = "{RAW JSON}"
+
+{
+  "candies":[
+    {
+      "name": "john",
+      "count": 10
+    }
+  ]
+}
+
+
+JSONObject root = new JSONObject(candyJSON)
+JSONArray candyArray = new root.getJSONArray("candies")
+JSONObject candyObject = candyArray.getJSONObject(0)
+
+String name = candyObject.getString("name")
+int count = candyObject.getInt("count")
